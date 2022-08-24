@@ -6,7 +6,7 @@ const InfoCardMovie = ({ movies }) => {
 	
 	return (
 		<Row>
-			{movies.map(movie => 
+			{movies.data.results.map(movie => 
 			<Col key={movie.id} xs={12} lg={6} xl={4}>
 				<Card key={movie.id} className="mb-3">
 					<Card.Img 
