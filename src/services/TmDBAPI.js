@@ -26,7 +26,7 @@ const getMovie = async (id) => {
 
 const getGenre = async ({queryKey}) => {
 	const [_key, { page, genre_id }] = queryKey
-	const res = await axios.get(`${BASE_URL}/discover/movie/?api_key=${API_KEY}&with_genres=${genre_id}&include_adult=false&page=${page}`)
+	const res = await axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&popularity.desc&with_genres=${genre_id}&include_adult=false&page=${page}`)
 	return res.data
 }
 
