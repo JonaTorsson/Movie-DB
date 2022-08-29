@@ -3,7 +3,7 @@ import useMovie from "../hooks/useMovie"
 import MovieInfo from '../components/MovieInfo'
 import { useParams } from 'react-router-dom'
 
-const PopularMovies = () => {
+const MovieInfoPage = () => {
 	const { id } = useParams()
 	const { data, isError, error, isLoading } = useMovie(id)
 
@@ -26,4 +26,4 @@ const PopularMovies = () => {
 	)
 }
 
-export default PopularMovies
+export default MovieInfoPage
