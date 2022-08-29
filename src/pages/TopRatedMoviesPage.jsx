@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap"
+import { Container, Col } from "react-bootstrap"
 import InfoCardMovie from "../components/InfoCardMovie"
 import useTopRatedMovies from "../hooks/useTopRatedMovies"
 
@@ -6,8 +6,8 @@ const TopRatedMoviesPage = () => {
 	const { data, isLoading, isError, error } = useTopRatedMovies()
 
 	return (
-		<Container className="py-4 text-center">
-
+		<Container className="py-4 text-center d-flex justify-content-center">
+			<Col xs={12} md={10}>
 			{isError && error.message}
 
 			{isLoading && (
@@ -20,7 +20,7 @@ const TopRatedMoviesPage = () => {
 					<InfoCardMovie movies={data} /> 
 				</>
 			)}
-
+			</Col>
 		</Container>
 	)
 }

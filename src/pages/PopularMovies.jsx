@@ -1,4 +1,4 @@
-import Container from 'react-bootstrap/Container'
+import {Container, Col} from 'react-bootstrap'
 import usePopularMovies from "../hooks/usePopularMovies"
 import InfoCardMovie from '../components/InfoCardMovie'
 
@@ -6,8 +6,8 @@ const PopularMovies = () => {
 	const { data, isError, error, isLoading } = usePopularMovies()
 
 	return (
-		<Container className="py-4 text-center">
-
+		<Container className="py-4 text-center d-flex justify-content-center">
+			<Col xs={12} md={10}>
 			{isError && error.message}
 
 			{isLoading && (
@@ -20,7 +20,7 @@ const PopularMovies = () => {
 					<InfoCardMovie movies={data} /> 
 				</>
 			)}
-
+			</Col>
 		</Container>
 	)
 }
