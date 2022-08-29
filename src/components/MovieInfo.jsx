@@ -10,7 +10,7 @@ const MovieInfo = ({ movie }) => {
 			<Card key={movie.id} className="mb-3">
 				<Card.Img 
 						variant="top" 
-						src={BASE_URL_IMAGE + movie.poster_path} 
+						src={BASE_URL_IMAGE + movie.poster_path}
 					/>
 				<Card.Body>
 					<Card.Text> 
@@ -53,28 +53,6 @@ const MovieInfo = ({ movie }) => {
 										Read more
 									</Button>
 									</div>
-								</Accordion.Body>
-							))}
-						</Accordion.Item>
-						<Accordion.Item eventKey="1">
-							<Accordion.Header>
-								Click to see similar movies 
-							</Accordion.Header>
-							{movie.similar.results.map(similarMovie => (
-								<Accordion.Body key={similarMovie.id} 
-									className="d-flex justify-content-between">
-									<span className="fw-bold"> 
-										{similarMovie.title} 
-									</span> 
-									
-									<Button 
-										size="sm"
-										as={Link}
-										to={`/movie/${similarMovie.id}`}
-										variant="info">
-										Read more
-									</Button>
-									
 								</Accordion.Body>
 							))}
 						</Accordion.Item>
